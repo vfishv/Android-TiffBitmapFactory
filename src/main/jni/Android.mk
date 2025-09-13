@@ -122,4 +122,6 @@ LOCAL_LDFLAGS +=-ljnigraphics
 LOCAL_STATIC_LIBRARIES := png
 LOCAL_STATIC_LIBRARIES += jpeg
 LOCAL_SHARED_LIBRARIES := tiff
+LOCAL_LDFLAGS += "-Wl,-z,max-page-size=16384"
+LOCAL_LDFLAGS += "-Wl,-z,common-page-size=16384"
 include $(BUILD_SHARED_LIBRARY)
