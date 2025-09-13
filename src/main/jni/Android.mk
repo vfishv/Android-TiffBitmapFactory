@@ -59,7 +59,8 @@ LOCAL_MODULE:= libtiff
 LOCAL_LDLIBS := -lz
 
 LOCAL_LDLIBS += $(LOCAL_PATH)/libs/$(TARGET_ARCH_ABI)/libjpeg.a
-
+LOCAL_LDFLAGS += "-Wl,-z,max-page-size=16384"
+LOCAL_LDFLAGS += "-Wl,-z,common-page-size=16384"
 include $(BUILD_SHARED_LIBRARY)
 ###############################################################
 include $(CLEAR_VARS)
@@ -82,6 +83,8 @@ LOCAL_SRC_FILES := \
 LOCAL_LDLIBS := -ldl -llog -ljnigraphics
 LOCAL_LDFLAGS +=-ljnigraphics
 LOCAL_SHARED_LIBRARIES := tiff
+LOCAL_LDFLAGS += "-Wl,-z,max-page-size=16384"
+LOCAL_LDFLAGS += "-Wl,-z,common-page-size=16384"
 include $(BUILD_SHARED_LIBRARY)
 
 ###############################################################
@@ -94,6 +97,8 @@ LOCAL_SRC_FILES := \
 LOCAL_LDLIBS := -ldl -llog -ljnigraphics
 LOCAL_LDFLAGS +=-ljnigraphics
 LOCAL_SHARED_LIBRARIES := tiff
+LOCAL_LDFLAGS += "-Wl,-z,max-page-size=16384"
+LOCAL_LDFLAGS += "-Wl,-z,common-page-size=16384"
 include $(BUILD_SHARED_LIBRARY)
 
 ###############################################################
